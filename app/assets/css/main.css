@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.5s;
+}
+
+.wrapper--dark {
+  background-color: #111;
+  color: #bdbdbd;
+}
+
+
+/* @import "_appForm"; */
+
+/* @import url('./_appForm.css'); */

@@ -1,0 +1,60 @@
+{
+  "inputs": [
+    {
+    "label": "Фамилия",
+    "type": "text",
+    "id": "last_name"
+    },
+    {
+      "label": "Имя",
+      "type": "text",
+      "id": "firt_name"
+    },
+    {
+      "label": "Отчество",
+      "type": "text",
+      "id": "second_name"
+    },
+    {
+      "label": "Дата рождения",
+      "type": "date",
+      "id": "birth_date"
+    },
+    {
+      "label": "Пол",
+      "type": "select",
+      "id": "sex",
+      "value1": "мужской",
+      "value2": "женский"
+    },
+    {
+      "label": "Семейное положение",
+      "type": "select",
+      "id": "maried",
+      "value1": "женат/замужем",
+      "value2": "не женат/не замужем"
+    }
+  ],
+  "contacts": [
+    {
+    "label": "Мобильный телефон",
+    "type": "text",
+    "id": "phone"
+    },
+    {
+      "label": "Электронная почта",
+      "type": "text",
+      "id": "mail"
+    }
+  ],
+  "checkbox": {
+    "label": "Я подтверждаю, что поставил галочку в трезвом уме и твердой памяти",
+      "type": "checkbox",
+      "id": "agree"
+  },
+  "submit": {
+    "type": "submit",
+    "url": "www.example.com",
+    "text": "Отправить"
+  }
+}
