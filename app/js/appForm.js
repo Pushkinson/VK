@@ -1,7 +1,6 @@
 export default class appForm {
   constructor(data) {
     this.wrapper = document.querySelector('.wrapper');
-    // this.form = this.getFormContainer();
     this.data = data;
 
     this.render();
@@ -19,18 +18,17 @@ export default class appForm {
     `;
     this.wrapper.append(this.form);
 
-    // if (Object.keys(this.data)[0] === "inputs") {
-      for (let i = 0; i < this.data.inputs.length; i++) {
-        this.form.append(this.getFormInputElement(i));
-      }
+    for (let i = 0; i < this.data.inputs.length; i++) {
+      this.form.append(this.getFormInputElement(i));
+    }
 
-      this.form.insertAdjacentHTML('beforeend', '<h3>Контактная информация</h3>');
-      for (let i = 0; i < this.data.contacts.length; i++) {
-        this.form.append(this.getFormContactsElement(i));
-      }
+    this.form.insertAdjacentHTML('beforeend', '<h3>Контактная информация</h3>');
+    for (let i = 0; i < this.data.contacts.length; i++) {
+      this.form.append(this.getFormContactsElement(i));
+    }
 
-      this.form.append(this.getFormCheckboxElement());
-      this.form.append(this.getFormSubmitElement());
+    this.form.append(this.getFormCheckboxElement());
+    this.form.append(this.getFormSubmitElement());
   }
 
   getFormContainer() {
@@ -44,7 +42,6 @@ export default class appForm {
     let formInputElement = document.createElement('div');
     formInputElement.classList.add('form__input', 'flex', 'input');
 
-// debugger;
     switch (this.data.inputs[elementNumber].type) {
       case "text":
       case "date":
@@ -66,7 +63,7 @@ export default class appForm {
   }
 
   getFormContactsElement(elementNumber) {
-    let formContactsElement = document.createElement('div');
+    const formContactsElement = document.createElement('div');
     formContactsElement.classList.add('form__input', 'flex', 'input');
     formContactsElement.innerHTML = `
       <label for="${this.data.contacts[elementNumber].id}">${this.data.contacts[elementNumber].label}</label>
@@ -76,7 +73,7 @@ export default class appForm {
   }
 
   getFormCheckboxElement() {
-    let formCheckboxElement = document.createElement('div');
+    const formCheckboxElement = document.createElement('div');
     formCheckboxElement.classList.add('form__input', 'flex', 'input');
     formCheckboxElement.innerHTML = `
       <input type="${this.data.checkbox.type}" id="${this.data.checkbox.id}"/>
@@ -87,7 +84,7 @@ export default class appForm {
   }
 
   getFormSubmitElement() {
-    let formSubmitElement = document.createElement('div');
+    const formSubmitElement = document.createElement('div');
     formSubmitElement.classList.add('form__submit', 'flex');
     formSubmitElement.innerHTML = `
         <input type="${this.data.submit.type}" value="${this.data.submit.text}" formaction="${this.data.submit.url}"/>
@@ -106,7 +103,6 @@ export default class appForm {
     this.form.querySelectorAll('.form__input').forEach( (el) => {
       el.classList.toggle('form__input--dark');
     });
-    console.log(this.form.querySelector('.theme_switcher_image'));
     this.form.querySelector('.theme_switcher_image').classList.toggle('theme_switcher_image--dark');
   }
 }
